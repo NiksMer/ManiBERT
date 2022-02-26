@@ -13,63 +13,63 @@ ManiBERT umfasst dabei das Modell zur Einstufung in die 15 wirtschaftlichen Them
 
 | economy | Beschreibung                              | Anzahl |
 |---------|-------------------------------------------|--------|
-| 0       | Keine Kategorie                           | 79.831 |
-| 1       | Freie Unternehmen                         | 1.665  |
-| 2       | Anreize: Positiv                          | 2.882  |
-| 3       | Marktregulation                           | 3.230  |
-| 4       | Wirtschaftliche Planung                   | 510    |
-| 5       | Korporatismus/Gemischte Wirtschaft        | 180    |
-| 6       | Protektionismus                           | 1.192  |
-| 7       | Wirtschaftliche Ziele                     | 755    |
-| 8       | Keynesianisches Nachfragemanagement       | 148    |
-| 9       | Wirtschaftliches Wachstum: Positiv        | 2.878  |
-| 10      | Technologie und Infrastruktur: Positiv    | 7.928  |
-| 11      | Kontrollierte Wirtschaft                  | 524    |
-| 12      | Verstaatlichungen                         | 743    |
-| 13      | Wirtschaftliche Orthodoxie                | 1.570  |
-| 14      | Marxistische Analysen: Positiv            | 147    |
-| 15      | Anti-Wachstumsökonomie und Nachhaltigkeit | 2.456  |
+| 0       | Keine Kategorie                           | 87.511 |
+| 1       | Freie Unternehmen                         | 1.769  |
+| 2       | Anreize: Positiv                          | 3.119  |
+| 3       | Marktregulation                           | 3.522  |
+| 4       | Wirtschaftliche Planung                   | 533    |
+| 5       | Korporatismus/Gemischte Wirtschaft        | 197    |
+| 6       | Protektionismus                           | 1.346  |
+| 7       | Wirtschaftliche Ziele                     | 817    |
+| 8       | Keynesianisches Nachfragemanagement       | 152    |
+| 9       | Wirtschaftliches Wachstum: Positiv        | 3.196  |
+| 10      | Technologie und Infrastruktur: Positiv    | 8.645  |
+| 11      | Kontrollierte Wirtschaft                  | 569    |
+| 12      | Verstaatlichungen                         | 845    |
+| 13      | Wirtschaftliche Orthodoxie                | 1.723  |
+| 14      | Marxistische Analysen: Positiv            | 146    |
+| 15      | Anti-Wachstumsökonomie und Nachhaltigkeit | 2.626  |
 
 ### Validierungsdatensatz
 
 | economy | Beschreibung                              | Anzahl |
 |---------|-------------------------------------------|--------|
-| 0       | Keine Kategorie                           | 19.936 |
-| 1       | Freie Unternehmen                         | 407  |
-| 2       | Anreize: Positiv                          | 679  |
-| 3       | Marktregulation                           | 844  |
-| 4       | Wirtschaftliche Planung                   | 116    |
-| 5       | Korporatismus/Gemischte Wirtschaft        | 45    |
-| 6       | Protektionismus                           | 308  |
-| 7       | Wirtschaftliche Ziele                     | 181    |
-| 8       | Keynesianisches Nachfragemanagement       | 35    |
-| 9       | Wirtschaftliches Wachstum: Positiv        | 726  |
-| 10      | Technologie und Infrastruktur: Positiv    | 1.982  |
-| 11      | Kontrollierte Wirtschaft                  | 129    |
-| 12      | Verstaatlichungen                         | 219    |
-| 13      | Wirtschaftliche Orthodoxie                | 372  |
-| 14      | Marxistische Analysen: Positiv            | 34   |
-| 15      | Anti-Wachstumsökonomie und Nachhaltigkeit | 647  |
+| 0       | Keine Kategorie                           | 15.444 |
+| 1       | Freie Unternehmen                         | 308  |
+| 2       | Anreize: Positiv                          | 525  |
+| 3       | Marktregulation                           | 656  |
+| 4       | Wirtschaftliche Planung                   | 93    |
+| 5       | Korporatismus/Gemischte Wirtschaft        | 28    |
+| 6       | Protektionismus                           | 231  |
+| 7       | Wirtschaftliche Ziele                     | 139    |
+| 8       | Keynesianisches Nachfragemanagement       | 33    |
+| 9       | Wirtschaftliches Wachstum: Positiv        | 553  |
+| 10      | Technologie und Infrastruktur: Positiv    | 1.527  |
+| 11      | Kontrollierte Wirtschaft                  | 94    |
+| 12      | Verstaatlichungen                         | 144    |
+| 13      | Wirtschaftliche Orthodoxie                | 285  |
+| 14      | Marxistische Analysen: Positiv            | 35   |
+| 15      | Anti-Wachstumsökonomie und Nachhaltigkeit | 502  |
 ### Testdatensatz
 
 | economy | Beschreibung                              | Anzahl |
 |---------|-------------------------------------------|--------|
-| 0       | Keine Kategorie                           | 9.343 |
-| 1       | Freie Unternehmen                         | 58  |
-| 2       | Anreize: Positiv                          | 164  |
-| 3       | Marktregulation                           | 314  |
+| 0       | Keine Kategorie                           | 6.155 |
+| 1       | Freie Unternehmen                         | 53  |
+| 2       | Anreize: Positiv                          | 81  |
+| 3       | Marktregulation                           | 210  |
 | 4       | Wirtschaftliche Planung                   | 67    |
 | 5       | Korporatismus/Gemischte Wirtschaft        | 23    |
-| 6       | Protektionismus                           | 406  |
-| 7       | Wirtschaftliche Ziele                     | 168    |
-| 8       | Keynesianisches Nachfragemanagement       | 11    |
-| 9       | Wirtschaftliches Wachstum: Positiv        | 519  |
-| 10      | Technologie und Infrastruktur: Positiv    | 601  |
-| 11      | Kontrollierte Wirtschaft                  | 104    |
-| 12      | Verstaatlichungen                         | 54    |
-| 13      | Wirtschaftliche Orthodoxie                | 250  |
+| 6       | Protektionismus                           | 329  |
+| 7       | Wirtschaftliche Ziele                     | 148    |
+| 8       | Keynesianisches Nachfragemanagement       | 9    |
+| 9       | Wirtschaftliches Wachstum: Positiv        | 374  |
+| 10      | Technologie und Infrastruktur: Positiv    | 339  |
+| 11      | Kontrollierte Wirtschaft                  | 94    |
+| 12      | Verstaatlichungen                         | 27    |
+| 13      | Wirtschaftliche Orthodoxie                | 184  |
 | 14      | Marxistische Analysen: Positiv            | 0  |
-| 15      | Anti-Wachstumsökonomie und Nachhaltigkeit | 275  |
+| 15      | Anti-Wachstumsökonomie und Nachhaltigkeit | 250  |
 
 ## Protektionismus
 
@@ -78,22 +78,22 @@ ManiBERT umfasst dabei das Modell zur Einstufung in die 15 wirtschaftlichen Them
 
 | protectionism | Beschreibung                              | Anzahl |
 |---------|-------------------------------------------|--------|
-| 0       | Keine Kategorie                           | 105.447 |
-| 1       | Protektionismus: Positiv                  | 580  |
-| 2       | Protektionismus: Negativ                  | 612  |
+| 0       | Keine Kategorie                           | 115.370 |
+| 1       | Protektionismus: Positiv                  | 641  |
+| 2       | Protektionismus: Negativ                  | 705  |
 
 ### Validierungsdaten
 
 | protectionism | Beschreibung                              | Anzahl |
 |---------|-------------------------------------------|--------|
-| 0       | Keine Kategorie                           | 26.352 |
-| 1       | Protektionismus: Positiv                  | 141  |
-| 2       | Protektionismus: Negativ                  | 167  |
+| 0       | Keine Kategorie                           | 20.366 |
+| 1       | Protektionismus: Positiv                  | 95  |
+| 2       | Protektionismus: Negativ                  | 136  |
 
 ### Testdaten
 
 | protectionism | Beschreibung                              | Anzahl |
 |---------|-------------------------------------------|--------|
-| 0       | Keine Kategorie                           | 11.951 |
-| 1       | Protektionismus: Positiv                  | 195  |
-| 2       | Protektionismus: Negativ                  | 211  |
+| 0       | Keine Kategorie                           | 8.014 |
+| 1       | Protektionismus: Positiv                  | 180  |
+| 2       | Protektionismus: Negativ                  | 149  |
