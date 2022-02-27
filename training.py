@@ -19,19 +19,25 @@ n_gpu = torch.cuda.device_count()
 
 ## Modelname
 model_to_use = "roberta-base"
-trained_model_name = "ManiBERT-economy"
+trained_model_name = "ManiBERT"
 
 ## Max Sequence Length
 max_lengh_parameter = 514
 
 ## Anzahl Labels
-label_count = 16
+label_count = 56
 
 ## Anzahl Epochs
-epoch_count = 5
+if n_gpu > 1 :
+    epoch_count = 5
+else:
+    epoch_count = 1
 
 ## Batch Size
-batch_size = 16
+if n_gpu > 1 :
+    batch_size = 16
+else:
+    batch_size = 4
 
 ## warmup_steps
 warmup_steps_parameter = 0
@@ -43,67 +49,28 @@ weight_decay_parameter = 0.1
 learning_rate_parameter = 1e-05
 
 ## Log file
-log_name = 'log_ecomomy.json'
+log_name = 'log_manibert.json'
 
 ## Report
-report_name = 'report_economy.txt'
+validatipon_report_name = 'validation_report_manibert.txt'
+test_report_name = 'test_report_manibert.txt'
 
 ####### Data Config ############
 
 ## Train Data
-train_data = "00_Data/00_Economy/trainingsdaten_economy_26022022.csv"
+train_data = "00_Data/01_data/trainingsdaten_manibert_27022022.csv"
 
 ## Valid Data
-valid_data = "00_Data/00_Economy/validierungsdaten_economy_26022022.csv"
+valid_data = "00_Data/01_data/validierungsdaten_manibert_27022022.csv"
+
+## Test Data
+test_data = "00_Data/01_data/testdaten_manibert_27022022.csv"
 
 ## Delimeter
 delimeter_char = ","
 
 ## Label Names
-label_names = [
-    "other","free market","incentives: positive","market regulation","economic planning","corporatism / mixed economy",
-    "protectionism","economic goals","keynesian demand management","economic growth: positive","technology and infrastructure: positiv",
-    "controlled economy","nationalisation","economic orthodoxy","marxist analysis","anti-growth economy and sustainability"
-]
-
-## Config Dicts
-id2label_parameter = {
-    "0": "other",
-    "1": "free market",
-    "2": "incentives: positive",
-    "3": "market regulation",
-    "4": "economic planning",
-    "5": "corporatism / mixed economy",
-    "6": "protectionism",
-    "7": "economic goals",
-    "8": "keynesian demand management",
-    "9": "economic growth: positive",
-    "10": "technology and infrastructure: positiv",
-    "11": "controlled economy",
-    "12": "nationalisation",
-    "13": "economic orthodoxy",
-    "14": "marxist analysis",
-    "15": "anti-growth economy and sustainability"
-}
-
-label2id_parameter = {
-    "other": 0,
-    "free market": 1,
-    "incentives: positive": 2,
-    "market regulation": 3,
-    "economic planning": 4,
-    "corporatism / mixed economy": 5,
-    "protectionism": 6,
-    "economic goals": 7,
-    "keynesian demand management": 8,
-    "economic growth: positive": 9,
-    "technology and infrastructure: positiv": 10,
-    "controlled economy": 11,
-    "nationalisation": 12,
-    "economic orthodoxy": 13,
-    "marxist analysis": 14,
-    "anti-growth economy and sustainability": 15
-}
+label_names = ["external relations","freedom and democracy","political system","economy","welfare and quality of life","fabric of society","social groups"]
 
 ####### Functions ############
 
@@ -129,13 +96,28 @@ def compute_metrics(pred):
 
 # %%
 # Daten laden
-raw_datasets  = load_dataset('csv',data_files={'train':[train_data],'validation':[valid_data]},delimiter=delimeter_char)
+raw_datasets  = load_dataset('csv',data_files={'train':[train_data],'validation':[valid_data],'test': [test_data]},delimiter=delimeter_char)
 
 # %%
 # config
 config = RobertaConfig(model_to_use)
-config.id2label = id2label_parameter
-config.label2id = label2id_parameter
+config.id2label = {
+    "0": "external relations",
+    "1": "freedom and democracy",
+    "2": "political system",
+    "3": "economy",
+    "4": "welfare and quality of life",
+    "5": "fabric of society",
+    "6": "social groups"}
+config.label2id = {
+    "external relations": 0,
+    "freedom and democracy": 1,
+    "political system": 2,
+    "economy": 3,
+    "welfare and quality of life": 4,
+    "fabric of society": 5,
+    "social groups": 6    
+}
 
 # Tokenizer
 tokenizer = RobertaTokenizer.from_pretrained(model_to_use,config=config,model_max_length=max_lengh_parameter)
@@ -179,9 +161,19 @@ trainer.train()
 
 # %%
 # Evaluate for Classification Report
+## Validation
 predictions, labels, _ = trainer.predict(tokenized_datasets["validation"])
 predictions = np.argmax(predictions, axis=1)
-with open(report_name,'w',encoding='utf-8') as f:
+with open(validatipon_report_name,'w',encoding='utf-8') as f:
+    f.truncate(0) # Vorher File leeren
+    f.write(classification_report(y_pred=predictions,y_true=labels,target_names=label_names))
+
+# %%
+# Evaluate for Classification Report
+## Test
+predictions, labels, _ = trainer.predict(tokenized_datasets["test"])
+predictions = np.argmax(predictions, axis=1)
+with open(test_report_name,'w',encoding='utf-8') as f:
     f.truncate(0) # Vorher File leeren
     f.write(classification_report(y_pred=predictions,y_true=labels,target_names=label_names))
 # %% 
@@ -197,4 +189,4 @@ with open(log_name, 'w',encoding='utf-8') as f:
 trainer.save_model (trained_model_name)
 
 # %%
-#
+
