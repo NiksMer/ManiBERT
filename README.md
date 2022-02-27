@@ -77,7 +77,7 @@
 |     604      |     Traditionelle   Moral: Negativ      |     291                  |     54                      |     38               |
 |     605      |     Recht und Ordnung                   |     5.582                |     949                     |     381              |
 |     606      |     Soziale   Harmonie: Positiv         |     1.348                |     229                     |     27               |
-|     607      |     Multikulturalismus:   Positiv       |     1.348                |     355                     |     71               |
+|     607      |     Multikulturalismus:   Positiv       |     2.006                |     355                     |     71               |
 |     608      |     Multikulturalismus:   Negativ       |     144                  |     31                      |     7                |
 
 ## 7. Domäne
@@ -88,6 +88,6 @@
 |     702      |     Arbeitergruppen:   Negativ                   |     208                  |     35                      |     0                |
 |     703      |     Landwirtschaft   und Bauern                  |     2.996                |     490                     |     130              |
 |     704      |     Mittelschicht   und Berufsgruppen            |     271                  |     38                      |     12               |
-|     705      |     Benachteiligte   Minderheiten                |     1.471                |     252                     |     82               |
+|     705      |     Benachteiligte   Minderheiten                |     1.417                |     252                     |     82               |
 |     706      |     Nicht-ökonomische   demografische Gruppen    |     2.429                |     435                     |     106              |
 
