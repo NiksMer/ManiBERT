@@ -19,7 +19,7 @@ n_gpu = torch.cuda.device_count()
 
 ## Modelname
 model_to_use = "roberta-base"
-trained_model_name = "ManiBERT"
+trained_model_name = "ManiBERT_v2"
 
 ## Max Sequence Length
 max_lengh_parameter = 514
@@ -40,20 +40,20 @@ else:
     batch_size = 4
 
 ## warmup_steps
-warmup_steps_parameter = 0
+warmup_ratio_parameter = 0.05
 
 ## weight_decay
 weight_decay_parameter = 0.1
 
 ## learning_rate
-learning_rate_parameter = 1e-05
+learning_rate_parameter = 5e-05
 
 ## Log file
-log_name = 'log_manibert.json'
+log_name = '01_Report/log_manibert.json'
 
 ## Report
-validatipon_report_name = 'validation_report_manibert.txt'
-test_report_name = 'test_report_manibert.txt'
+validatipon_report_name = '01_Report/validation_report_manibert.txt'
+test_report_name = '01_Report/test_report_manibert.txt'
 
 ####### Data Config ############
 
@@ -274,20 +274,22 @@ def compute_metrics(pred):
 raw_datasets  = load_dataset('csv',data_files={'train':[train_data],'validation':[valid_data],'test': [test_data]},delimiter=delimeter_char)
 
 # %%
-# config
-config = RobertaConfig(model_to_use)
-config.id2label = id2label_parameter
-config.label2id = label2id_parameter
-
 # Tokenizer
-tokenizer = RobertaTokenizer.from_pretrained(model_to_use,config=config,model_max_length=max_lengh_parameter)
+RobertaTokenizer.from_pretrained(
+    model_to_use,
+    model_max_length=max_lengh_parameter
+    ).save_pretrained(trained_model_name)
+tokenizer = RobertaTokenizer.from_pretrained(
+    model_to_use,
+    model_max_length=max_lengh_parameter
+    )
 tokenized_datasets = raw_datasets.map(tokenize_function, batched=True)
 
 # %%
 # Trainer Argumente
 training_args = TrainingArguments(
     output_dir=trained_model_name,
-    warmup_steps=warmup_steps_parameter,
+    warmup_ratio=warmup_ratio_parameter,
     weight_decay=weight_decay_parameter, 
     learning_rate=learning_rate_parameter,
     fp16 = True,
@@ -296,14 +298,21 @@ training_args = TrainingArguments(
     per_device_train_batch_size=batch_size,
     overwrite_output_dir=True,
     per_device_eval_batch_size=batch_size,
-    save_strategy="epoch",
+    save_strategy="no",
     logging_dir='logs',   
     logging_strategy= 'steps',     
-    logging_steps=10)
+    logging_steps=10,
+    push_to_hub=True,
+    hub_strategy="end")
 
 # %%
 # Modell laden
-model = RobertaForSequenceClassification.from_pretrained(model_to_use, num_labels=label_count)
+model = RobertaForSequenceClassification.from_pretrained(
+    model_to_use, 
+    num_labels=label_count,
+    id2label=id2label_parameter,
+    label2id=label2id_parameter
+    )
 
 # %%
 # Trainer definieren
@@ -346,7 +355,7 @@ with open(log_name, 'w',encoding='utf-8') as f:
         f.write(str(obj)+'\n')
 
 ## Modell speichern
-trainer.save_model (trained_model_name)
-
+trainer.save_model(trained_model_name)
+tokenizer.save_pretrained(trained_model_name, push_to_hub=True)
 # %%
 

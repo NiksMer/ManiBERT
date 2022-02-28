@@ -1,0 +1,62 @@
+                                                                 precision    recall  f1-score   support
+
+                        Foreign Special Relationships: Positive       0.62      0.35      0.45        60
+                        Foreign Special Relationships: Negative       1.00      0.05      0.09        22
+                                               Anti-Imperialism       0.00      0.00      0.00         1
+                                             Military: Positive       0.67      0.60      0.63       159
+                                             Military: Negative       0.67      0.60      0.63        52
+                                                          Peace       0.71      0.59      0.64        49
+                                     Internationalism: Positive       0.58      0.50      0.54       404
+European Community/Union or Latin America Integration: Positive       0.45      0.25      0.32        20
+                                     Internationalism: Negative       0.10      0.04      0.05        57
+European Community/Union or Latin America Integration: Negative       0.00      0.00      0.00         0
+                                       Freedom and Human Rights       0.29      0.42      0.34        76
+                                                      Democracy       0.47      0.56      0.51       206
+                                    Constitutionalism: Positive       0.33      0.17      0.22        12
+                                    Constitutionalism: Negative       0.00      0.00      0.00         2
+                                     Decentralisation: Positive       0.52      0.39      0.45       331
+                                       Centralisation: Positive       0.00      0.00      0.00        71
+                     Governmental and Administrative Efficiency       0.26      0.41      0.32       105
+                                           Political Corruption       0.77      0.43      0.55       234
+                                            Political Authority       0.32      0.51      0.39       300
+                                            Free Market Economy       0.13      0.21      0.16        53
+                                           Incentives: Positive       0.19      0.58      0.28        81
+                                              Market Regulation       0.36      0.36      0.36       210
+                                              Economic Planning       0.28      0.07      0.12        67
+                                     Corporatism/ Mixed Economy       0.71      0.22      0.33        23
+                                        Protectionism: Positive       0.57      0.13      0.22       180
+                                        Protectionism: Negative       0.57      0.31      0.40       149
+                                                 Economic Goals       0.00      0.00      0.00       148
+                                    Keynesian Demand Management       0.00      0.00      0.00         9
+                                      Economic Growth: Positive       0.48      0.21      0.30       374
+                        Technology and Infrastructure: Positive       0.46      0.71      0.56       339
+                                             Controlled Economy       0.89      0.09      0.16        94
+                                                Nationalisation       0.30      0.11      0.16        27
+                                             Economic Orthodoxy       0.48      0.48      0.48       184
+                                     Marxist Analysis: Positive       0.00      0.00      0.00         0
+                         Anti-Growth Economy and Sustainability       0.29      0.37      0.33       250
+                                       Environmental Protection       0.61      0.73      0.67       934
+                                              Culture: Positive       0.48      0.68      0.56        92
+                                             Equality: Positive       0.44      0.42      0.43       361
+                                        Welfare State Expansion       0.60      0.63      0.61       990
+                                       Welfare State Limitation       0.00      0.00      0.00         2
+                                            Education Expansion       0.70      0.58      0.63       274
+                                           Education Limitation       0.00      0.00      0.00         1
+                                 National Way of Life: Positive       0.64      0.23      0.34       395
+                                 National Way of Life: Negative       0.00      0.00      0.00         2
+                                 Traditional Morality: Positive       0.09      0.32      0.14        19
+                                 Traditional Morality: Negative       0.43      0.16      0.23        38
+                                                  Law and Order       0.66      0.77      0.71       381
+                                     Civic Mindedness: Positive       0.22      0.41      0.28        27
+                                     Multiculturalism: Positive       0.28      0.45      0.35        71
+                                     Multiculturalism: Negative       0.00      0.00      0.00         7
+                                        Labour Groups: Positive       0.10      0.25      0.14        57
+                                        Labour Groups: Negative       0.00      0.00      0.00         0
+                                        Agriculture and Farmers       0.44      0.76      0.56       130
+                           Middle Class and Professional Groups       0.38      0.42      0.40        12
+                                Underprivileged Minority Groups       0.27      0.43      0.33        82
+                                Non-economic Demographic Groups       0.22      0.27      0.24       106
+
+                                                       accuracy                           0.48      8330
+                                                      macro avg       0.36      0.31      0.30      8330
+                                                   weighted avg       0.51      0.48      0.47      8330
