@@ -43,3 +43,6 @@ logs/
 
 # Mlflow
 mlruns/
+
+# Model 
+ManiBERT/
