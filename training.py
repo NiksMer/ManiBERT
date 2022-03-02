@@ -22,7 +22,7 @@ model_to_use = "roberta-base"
 trained_model_name = "ManiBERT_v2"
 
 ## Max Sequence Length
-max_lengh_parameter = 514
+max_lengh_parameter = 512
 
 ## Anzahl Labels
 label_count = 56
