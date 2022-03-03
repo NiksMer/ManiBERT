@@ -58,13 +58,13 @@ test_report_name = '01_Report/test_report_manibert.txt'
 ####### Data Config ############
 
 ## Train Data
-train_data = "00_Data/01_data/trainingsdaten_manibert_27022022.csv"
+train_data = "00_Data_intern/01_data/trainingsdaten_manibert_27022022.csv"
 
 ## Valid Data
-valid_data = "00_Data/01_data/validierungsdaten_manibert_27022022.csv"
+valid_data = "00_Data_intern/01_data/validierungsdaten_manibert_27022022.csv"
 
 ## Test Data
-test_data = "00_Data/01_data/testdaten_manibert_27022022.csv"
+test_data = "00_Data_intern/01_data/testdaten_manibert_27022022.csv"
 
 ## Delimeter
 delimeter_char = ","
