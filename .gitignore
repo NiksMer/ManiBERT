@@ -46,3 +46,6 @@ mlruns/
 
 # Model 
 ManiBERT/
+
+# Data
+00_Data/
